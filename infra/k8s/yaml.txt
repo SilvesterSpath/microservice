@@ -2,3 +2,15 @@ Remarks about yaml files
 
   - the '-' sign indicates that an array entry is going to be specified
   - if after the image name no version number is specified, than kubernetes need to look for this container on the dockerhub on the internet, but if we didn't specify this than will look only on our personal computer
+
+  - apiVersion: apps/V1   - 'app' is a bucket of different objects, a pod is 'V1'
+  - selector and after template/metadata is for to know what deployment should do
+  - find all the data with app/posts as a label
+  - under the template is where we specify what kind of pods we want to create
+        selector:
+        matchLabels:
+          app: posts
+        template:
+          metadata:
+            labels:
+              app: posts
