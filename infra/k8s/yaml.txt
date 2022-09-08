@@ -1,0 +1,4 @@
+Remarks about yaml files
+
+  - the '-' sign indicates that an array entry is going to be specified
+  - if after the image name no version number is specified, than kubernetes need to look for this container on the dockerhub on the internet, but if we didn't specify this than will look only on our personal computer

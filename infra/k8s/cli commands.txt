@@ -1,0 +1,7 @@
+cli commands regarding kubernetes
+
+  - kubectl version
+  - kubectl apply -f posts.yaml
+  - kubectl get pods
+  - abbreviation: kubectl = k
+
