@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: posts
-          image: silvesterspath/posts
+          image: silvesterspath/posts:0.0.5
