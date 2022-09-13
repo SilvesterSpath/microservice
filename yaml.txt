@@ -14,3 +14,7 @@ Remarks about yaml files
           metadata:
             labels:
               app: posts
+
+--- means in a yaml file that a new object will be created
+
+  - the service type in default is ClusterIP
