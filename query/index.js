@@ -60,13 +60,16 @@ app.post('/events', (req, res) => {
 
 app.listen(4002, async () => {
   console.log('Query on 4002');
+  try {
+    const res = await axios.get('http://event-bus-srv:4005/events');
 
-  const res = await axios.get('http://event-bus-srv:4005/events');
+    console.log(res.data);
 
-  console.log(res.data);
-
-  for (let item of res.data) {
-    console.log('Processing event: ', item.type);
-    handleEvent(item.type, item.data);
+    for (let item of res.data) {
+      console.log('Processing event: ', item.type);
+      handleEvent(item.type, item.data);
+    }
+  } catch (error) {
+    console.log(error.message);
   }
 });

@@ -18,19 +18,19 @@ spec:
                 port:
                   number: 4000
           - pathType: Prefix
-            path: '/posts/?(.*)/comments'
-            backend:
-              service:
-                name: comments-srv
-                port:
-                  number: 4001
-          - pathType: Prefix
             path: '/posts'
             backend:
               service:
                 name: query-srv
                 port:
                   number: 4002
+          - pathType: Prefix
+            path: '/posts/?(.*)/comments'
+            backend:
+              service:
+                name: comments-srv
+                port:
+                  number: 4001
           - pathType: Prefix
             path: '/?(.*)'
             backend:
