@@ -1,0 +1,58 @@
+apiVersion: skaffold/v2alpha3
+kind: Config
+deploy:
+  kubectl:
+    manifests:
+      - ./infra/k8s/*
+build:
+  local:
+    push: false
+  artifacts:
+    - image: silvesterspath/client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manaul:
+          - src: 'src/**/*.js'
+            dest: .
+    - image: silvesterspath/comments
+      context: comments
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manaul:
+          - src: '*.js'
+            dest: .
+    - image: silvesterspath/posts
+      context: posts
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manaul:
+          - src: '*.js'
+            dest: .
+    - image: silvesterspath/event-bus
+      context: event-bus
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manaul:
+          - src: '*.js'
+            dest: .
+    - image: silvesterspath/query
+      context: query
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manaul:
+          - src: '*.js'
+            dest: .
+    - image: silvesterspath/moderation
+      context: moderation
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manaul:
+          - src: '*.js'
+            dest: .
