@@ -1,4 +1,4 @@
-apiVersion: skaffold/v2alpha3
+apiVersion: skaffold/v2beta29
 kind: Config
 deploy:
   kubectl:
@@ -13,7 +13,7 @@ build:
       docker:
         dockerfile: Dockerfile
       sync:
-        manaul:
+        manual:
           - src: 'src/**/*.js'
             dest: .
     - image: silvesterspath/comments
@@ -21,7 +21,7 @@ build:
       docker:
         dockerfile: Dockerfile
       sync:
-        manaul:
+        manual:
           - src: '*.js'
             dest: .
     - image: silvesterspath/posts
@@ -29,7 +29,7 @@ build:
       docker:
         dockerfile: Dockerfile
       sync:
-        manaul:
+        manual:
           - src: '*.js'
             dest: .
     - image: silvesterspath/event-bus
@@ -37,7 +37,7 @@ build:
       docker:
         dockerfile: Dockerfile
       sync:
-        manaul:
+        manual:
           - src: '*.js'
             dest: .
     - image: silvesterspath/query
@@ -45,7 +45,7 @@ build:
       docker:
         dockerfile: Dockerfile
       sync:
-        manaul:
+        manual:
           - src: '*.js'
             dest: .
     - image: silvesterspath/moderation
@@ -53,6 +53,6 @@ build:
       docker:
         dockerfile: Dockerfile
       sync:
-        manaul:
+        manual:
           - src: '*.js'
             dest: .
